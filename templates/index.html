@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Boston Housing Price Prediction</h2>
+    <form action="/predict" method="post">
+
+        <label for="crim">CRIM:</label>
+        <input type="text" id="crim" name="CRIM" required><br><br>
+
+        <label for="zn">ZN:</label>
+        <input type="text" id="zn" name="ZN" required><br><br>
+
+        <label for="indus">INDUS:</label>
+        <input type="text" id="indus" name="INDUS" required><br><br>
+
+        <label for="chas">CHAS:</label>
+        <input type="text" id="chas" name="CHAS" required><br><br>
+
+        <label for="nox">NOX:</label>
+        <input type="text" id="nox" name="NOX" required><br><br>
+
+        <label for="rm">RM:</label>
+        <input type="text" id="rm" name="RM" required><br><br>
+
+        <label for="age">AGE:</label>
+        <input type="text" id="age" name="AGE" required><br><br>
+
+        <label for="dis">DIS:</label>
+        <input type="text" id="dis" name="DIS" required><br><br>
+
+        <label for="rad">RAD:</label>
+        <input type="text" id="rad" name="RAD" required><br><br>
+
+        <label for="tax">TAX:</label>
+        <input type="text" id="tax" name="TAX" required><br><br>
+
+        <label for="ptratio">PTRATIO:</label>
+        <input type="text" id="ptratio" name="PTRATIO" required><br><br>
+
+        <label for="b">B:</label>
+        <input type="text" id="b" name="B"><br><br>
+
+        <label for="lstat">LSTAT:</label>
+        <input type="text" id="lstat" name="LSTAT"><br><br>
+
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>Predicted Price: ${{ prediction_text }}</h3>
+    {% endif %}
+    
+    {% if error %}
+        <h3 style="color: red;">Error: {{ error }}</h3>
+    {% endif %}
+</body>
+</html>
