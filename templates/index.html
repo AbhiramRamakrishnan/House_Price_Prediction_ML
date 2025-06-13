@@ -4,51 +4,137 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <!-- fontawesome link -->
+    <script src="https://kit.fontawesome.com/1f69d10539.js" crossorigin="anonymous"></script>
+
+    <style>
+        h2{
+            text-align: center;
+            margin-top: 20px;
+            color: rgb(28, 28, 125);
+            font-size: xx-large;
+            margin-top: 2%;
+        }
+        .home-logo{
+            font-size: 1.5rem;
+            margin-right: 2rem;
+        }
+        h3{
+            text-align: center;
+            color: rgb(60, 54, 163);
+            font-size: x-large;
+            margin-top: 1%;
+        }
+        input{
+            border-radius: 2rem;
+            margin-top: 0.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            border-radius: 10px;
+            justify-content: space-evenly;
+        }
+        .submit{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 0;
+            width: 5rem;
+        }
+        .submit-btn{
+            width: 5rem;
+            background-color: rgb(34, 34, 182);
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            color: white;
+        }
+        form{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 2%;
+        }
+        .content{
+            width: 10%;
+        }
+        .submit-icon{
+            width: 1rem;
+            margin-right: 5rem;
+        }
+        span{
+            background-color: rgb(28, 28, 125);
+            color: white;
+            padding-top: 0.1rem;
+            padding-bottom: 0.1rem;
+            padding-left: 0.6rem;
+            padding-right: 0.6rem;
+        }
+    </style>
 </head>
 <body>
-    <h2>Boston Housing Price Prediction</h2>
+    <h2><i class="fa-solid fa-house home-logo"></i>Boston Housing <span>Price Prediction</span></h2>
     <form action="/predict" method="post">
 
-        <label for="crim">CRIM:</label>
-        <input type="text" id="crim" name="CRIM" required><br><br>
+        <div class="container">
 
-        <label for="zn">ZN:</label>
-        <input type="text" id="zn" name="ZN" required><br><br>
+            <div class="content">
 
-        <label for="indus">INDUS:</label>
-        <input type="text" id="indus" name="INDUS" required><br><br>
+                <label for="crim">CRIM:</label>
+                <input type="text" id="crim" name="CRIM" required><br><br>
 
-        <label for="chas">CHAS:</label>
-        <input type="text" id="chas" name="CHAS" required><br><br>
+                <label for="indus">INDUS:</label>
+                <input type="text" id="indus" name="INDUS" required><br><br>
+                
+                <label for="nox">NOX:</label>
+                <input type="text" id="nox" name="NOX" required><br><br>
 
-        <label for="nox">NOX:</label>
-        <input type="text" id="nox" name="NOX" required><br><br>
+                <label for="age">AGE:</label>
+                <input type="text" id="age" name="AGE" required><br><br>
 
-        <label for="rm">RM:</label>
-        <input type="text" id="rm" name="RM" required><br><br>
+                <label for="rad">RAD:</label>
+                <input type="text" id="rad" name="RAD" required><br><br>
 
-        <label for="age">AGE:</label>
-        <input type="text" id="age" name="AGE" required><br><br>
+                <label for="ptratio">PTRATIO:</label>
+                <input type="text" id="ptratio" name="PTRATIO" required><br><br>
 
-        <label for="dis">DIS:</label>
-        <input type="text" id="dis" name="DIS" required><br><br>
+                <label for="lstat">LSTAT:</label>
+                <input type="text" id="lstat" name="LSTAT"><br><br>
 
-        <label for="rad">RAD:</label>
-        <input type="text" id="rad" name="RAD" required><br><br>
+            </div>
+            <div class="content">
 
-        <label for="tax">TAX:</label>
-        <input type="text" id="tax" name="TAX" required><br><br>
+                <label for="zn">ZN:</label>
+                <input type="text" id="zn" name="ZN" required><br><br>
+                
+                <label for="chas">CHAS:</label>
+                <input type="text" id="chas" name="CHAS" required><br><br>
+            
+                <label for="rm">RM:</label>
+                <input type="text" id="rm" name="RM" required><br><br>
+                        
+                <label for="dis">DIS:</label>
+                <input type="text" id="dis" name="DIS" required><br><br>
 
-        <label for="ptratio">PTRATIO:</label>
-        <input type="text" id="ptratio" name="PTRATIO" required><br><br>
+                <label for="tax">TAX:</label>
+                <input type="text" id="tax" name="TAX" required><br><br>
 
-        <label for="b">B:</label>
-        <input type="text" id="b" name="B"><br><br>
+                <label for="b">B:</label>
+                <input type="text" id="b" name="B"><br><br>
 
-        <label for="lstat">LSTAT:</label>
-        <input type="text" id="lstat" name="LSTAT"><br><br>
+            </div>
+        </div>
+        
 
-        <input type="submit" value="Predict">
+        <div class="submit">
+            <input type="submit" value="Predict" class="submit-btn">
+        </div>
     </form>
 
     {% if prediction_text %}
